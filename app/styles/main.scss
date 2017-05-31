@@ -32,6 +32,9 @@ $modular-scale-base: rem($em-base);
 // colors
 $white: #fff;
 
+$light-gray: #F5F5F5;
+$dark-gray: #262322;
+
 /*------------------------------------*\
   #MIXINS
 \*------------------------------------*/
@@ -64,7 +67,6 @@ $white: #fff;
 }
 
 body {
-	background-color: #FAFAFA;
 	font-family: 'Press Start 2P', cursive;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -112,6 +114,10 @@ img {
 			position: relative;
 			height: modular-scale(6);
 			perspective: rem(800px);
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 			.card__inner {
@@ -129,9 +135,7 @@ img {
 					width: 100%;
 					height: 100%;
 					margin: 0;
-					padding: 1rem;
 					border-radius: 4px;
-					background-color: $white;
 					backface-visibility: hidden;
 				}
 
@@ -141,7 +145,7 @@ img {
 						justify-content: center;
 						width: 100%;
 						height: 100%;
-						padding: inherit;
+						padding: modular-scale(1);
 						border-radius: inherit;
 					}
 
@@ -150,12 +154,8 @@ img {
 							stroke-width: 0;
 						}
 
-				.card__front {
-					// background-color: #000;
-				}
-
 					.card__flipper--front .flipper__inner {
-						background-color: #097809;
+						background-color: $dark-gray;
 					}
 
 						.card__img--logo {
