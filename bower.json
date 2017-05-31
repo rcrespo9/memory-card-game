@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "modernizr": "~2.8.1",
-    "normalize-css": "^7.0.0"
+    "normalize-css": "^7.0.0",
+    "bourbon": "^4.3.4"
   },
   "devDependencies": {
     "chai": "^4.0.0",

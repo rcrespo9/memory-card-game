@@ -1,11 +1,6 @@
 // bower:scss
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 // endbower
-
-/*------------------------------------*\
-  #VARIABLES
-\*------------------------------------*/
-
-$baseFontSize: 16;
 
 /*------------------------------------*\
   #FUNCTIONS
@@ -21,6 +16,37 @@ $baseFontSize: 16;
 	}
 
 	@return $pixels / $context * 1rem;
+}
+
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+// typography
+$baseFontSize: 16;
+
+$modular-scale-ratio: $golden;
+$modular-scale-base: rem($em-base);
+
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+
+@mixin row() {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@mixin column($width, $fit: false) {
+	padding: 1rem;
+	flex: 0 0 $width;
+
+	@if $fit {
+		flex: 1;
+	} else {
+		flex: 0 0 $width;
+	}
 }
 
 /*------------------------------------*\
@@ -54,3 +80,48 @@ img {
 	width: 100%;
 	height: auto;
 }
+
+/*------------------------------------*\
+  #LAYOUT
+\*------------------------------------*/
+
+.page-content {
+	padding: 1rem;
+	max-width: modular-scale(9);
+	margin: 0 auto;
+}
+
+/*------------------------------------*\
+  #CARDS
+\*------------------------------------*/
+
+.cards {
+	@include row;
+}
+
+	.card-container {
+		position: relative;
+		height: modular-scale(6);
+		perspective: rem(800px);
+		@include column(100% / 4);
+	}
+
+		.card {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform-style: preserve-3d;
+			transition: transform 1s;
+		}
+
+			.card figure {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				backface-visibility: hidden;
+			}
+
+			.card__back {
+				transform: rotateY(180deg);
+			}
