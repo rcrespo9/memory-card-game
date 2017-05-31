@@ -122,6 +122,11 @@ img {
 				backface-visibility: hidden;
 			}
 
+				.card__img {
+					display: inline-block;
+					stroke-width: 0;
+				}
+
 			.card__back {
 				transform: rotateY(180deg);
 			}
