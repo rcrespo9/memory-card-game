@@ -127,6 +127,7 @@ img {
 				height: 100%;
 				transform-style: preserve-3d;
 				transition: transform 1s;
+				transform: rotateY(180deg);
 			}
 
 				.card__flipper {
@@ -150,7 +151,6 @@ img {
 
 						.card__img {
 							display: inline-block;
-							stroke-width: 0;
 						}
 
 					.card__flipper--front .flipper__inner {
@@ -159,8 +159,18 @@ img {
 
 						.card__img--logo {
 							width: modular-scale(8);
+							stroke-width: 0;
 						}
 
 				.card__flipper--back {
 					transform: rotateY(180deg);
 				}
+
+					.card__flipper--back .flipper__inner {
+						background-color: $light-gray;
+					}
+
+						.card__img--character {
+							width: auto;
+							height: modular-scale(8);
+						}

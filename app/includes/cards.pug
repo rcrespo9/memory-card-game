@@ -12,4 +12,6 @@ section.cards
                     svg.card__img.card__img--logo
                       use(xlink:href='#tmnt-logo')
 
-                        figure.card__flipper.card__flipper--back= character
+                figure.card__flipper.card__flipper--back
+                    .flipper__inner
+                        img.card__img.card__img--character(src=`../images/${character}.png` alt=`Photo of ${character}.`)
