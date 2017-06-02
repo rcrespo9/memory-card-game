@@ -26,7 +26,6 @@
 // typography
 $baseFontSize: 16;
 
-$modular-scale-ratio: $golden;
 $modular-scale-base: rem($em-base);
 
 // colors
@@ -93,7 +92,7 @@ img {
 \*------------------------------------*/
 
 .page-content {
-	max-width: modular-scale(9);
+	max-width: modular-scale(14);
 	margin: 0 auto;
 	padding: 1rem;
 }
@@ -112,7 +111,7 @@ img {
 
 		.card__container {
 			position: relative;
-			height: modular-scale(6);
+			height: modular-scale(10);
 			perspective: rem(800px);
 
 			&:hover {
@@ -145,7 +144,7 @@ img {
 						justify-content: center;
 						width: 100%;
 						height: 100%;
-						padding: modular-scale(1);
+						padding: modular-scale(2);
 						border-radius: inherit;
 					}
 
@@ -159,7 +158,7 @@ img {
 					}
 
 						.card__img--logo {
-							width: modular-scale(5);
+							width: modular-scale(7);
 						}
 
 				.card__flipper--back {
