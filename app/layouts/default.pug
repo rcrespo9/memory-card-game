@@ -28,46 +28,32 @@ html.no-js(lang='en')
     <!--[if lt IE 10]>
         p.browserupgrade You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
     <![endif]-->
-    include svg-icons.pug
-
-    - var cardPairsAmt = 2;
-    - var characters = ['raphael', 'donatello', 'leonardo', 'michelangelo', 'splinter', 'shredder'];
+    include ../includes/svg-icons.pug
 
     main.page-content
-      section.cards
-        - for (var i = 0; i < cardPairsAmt; i++)
-            each character in characters
-                .card(data-character=character data-matched='false')
-                  .card__container
-                    .card__inner
-                      figure.card__flipper.card__flipper--front
-                        .flipper__inner
-                          svg.card__img.card__img--logo
-                            use(xlink:href='#tmnt-logo')
+        block content
 
-                      figure.card__flipper.card__flipper--back= character
-
-    // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      (function(b, o, i, l, e, r) {
-      b.GoogleAnalyticsObject = l;
-      b[l] || (b[l] =
-      function() {
-      (b[l].q = b[l].q || []).push(arguments)
-      });
-      b[l].l = +new Date;
-      e = o.createElement(i);
-      r = o.getElementsByTagName(i)[0];
-      e.src = 'https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e, r)
-      }(window, document, 'script', 'ga'));
-      ga('create', 'UA-59967269-1');
-      ga('send', 'pageview');
-    // build:js scripts/vendor.js
-    // bower:js
-    script(src='/bower_components/modernizr/modernizr.js')
-    // endbower
-    // endbuild
-    // build:js scripts/main.js
-    script(src='scripts/main.js')
-    // endbuild
+    block scripts
+        script.
+          (function(b, o, i, l, e, r) {
+          b.GoogleAnalyticsObject = l;
+          b[l] || (b[l] =
+          function() {
+          (b[l].q = b[l].q || []).push(arguments)
+          });
+          b[l].l = +new Date;
+          e = o.createElement(i);
+          r = o.getElementsByTagName(i)[0];
+          e.src = 'https://www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e, r)
+          }(window, document, 'script', 'ga'));
+          ga('create', 'UA-59967269-1');
+          ga('send', 'pageview');
+        // build:js scripts/vendor.js
+        // bower:js
+        script(src='/bower_components/modernizr/modernizr.js')
+        // endbower
+        // endbuild
+        // build:js scripts/main.js
+        script(src='scripts/main.js')
+        // endbuild

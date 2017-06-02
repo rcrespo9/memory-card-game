@@ -1,0 +1,15 @@
+- var cardPairsAmt = 2;
+- var characters = ['raphael', 'donatello', 'leonardo', 'michelangelo', 'splinter', 'shredder'];
+
+section.cards
+  - for (var i = 0; i < cardPairsAmt; i++)
+      each character in characters
+          .card(data-character=character data-matched='false')
+            .card__container
+              .card__inner
+                figure.card__flipper.card__flipper--front
+                  .flipper__inner
+                    svg.card__img.card__img--logo
+                      use(xlink:href='#tmnt-logo')
+
+                        figure.card__flipper.card__flipper--back= character
