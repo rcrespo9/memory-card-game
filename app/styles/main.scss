@@ -130,6 +130,7 @@ img {
 				height: 100%;
 				transform-style: preserve-3d;
 				transition: transform 1s;
+				transform: rotateY(180deg);
 			}
 
 				.card__flipper {
@@ -172,7 +173,7 @@ img {
 				}
 
 					.card__flipper--back .flipper__inner {
-						border-color: 000;
+						border-color: $black;
 					}
 
 						.card__img--character {
