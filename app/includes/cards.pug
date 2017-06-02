@@ -1,5 +1,5 @@
 - const cardPairsAmt = 2;
-- const characters = [ { name: 'Raphael', image: 'raphael.png' }, { name: 'Donatello', image: 'donatello.png' }, { name: 'Leonardo', image: 'leonardo.png' }, { name: 'Michelangelo', image: 'michelangelo.png' }, { name: 'Master Splinter', image: 'splinter.png' }, { name: 'The Shredder', image: 'shredder.png' } ];
+- const characters = [ { name: 'Raphael', image: 'raphael.png' }, { name: 'Donatello', image: 'donatello.png' }, { name: 'Leonardo', image: 'leonardo.png' }, { name: 'Michelangelo', image: 'michelangelo.png' }, { name: 'Master Splinter', image: 'splinter.png' }, { name: 'Shredder', image: 'shredder.png' } ];
 
 section.cards
   - for (var i = 0; i < cardPairsAmt; i++)
@@ -9,9 +9,11 @@ section.cards
               .card__inner
                 figure.card__flipper.card__flipper--front
                   .flipper__inner
-                    svg.card__img.card__img--logo
+                    svg.card__logo
                       use(xlink:href='#tmnt-logo')
 
                 figure.card__flipper.card__flipper--back
                     .flipper__inner
-                        img.card__img.card__img--character(src=`../images/${character.image}` alt=`Photo of ${character.name}.`)
+                        img.card__character-img(src=`../images/${character.image}` alt=`Photo of ${character.name} from the Teenage Mutant Ninja Turtles.`)
+                        .card__name-wrap
+                            .card__name= character.name
