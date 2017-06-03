@@ -185,38 +185,43 @@ img {
 
 						.card__name-wrap {
 							position: relative;
+							z-index: 1;
 							flex: 1;
 							align-self: flex-end;
-							padding: modular-scale(-9);
-							border: inherit;
-							background-color: $red;
+							box-shadow: 0px 0px 0px 3px $black;
 							text-align: center;
 
-							// &:before,
-							// &:after {
-							// 	content: "";
-							// 	position: absolute;
-							// 	top: 0;
-							// 	width: modular-scale(1);
-							// 	height: 100%;
-							// 	border: inherit;
-							// 	background-color: inherit;
-							// }
+							&:before,
+							&:after {
+								content: "";
+								position: absolute;
+								z-index: -1;
+								top: 0;
+								bottom: 0;
+								display: block;
+								width: modular-scale(-1);
+								height: 100%;
+								background-color: $red;
+							}
 
-							// &:before {
-							// 	left: rem(-15px);
-							// 	border-right: none;
-							// 	transform: skew(30deg);
-							// }
+							&:before {
+								left: -6px;
+								box-shadow: -1px 0px 0px 3px $black;
+								transform: skew(30deg);
+							}
 
-							// &:after {
-							// 	right: rem(-15px);
-							// 	border-left: none;
-							// 	transform: skew(-30deg);
-							// }
+							&:after {
+								right: -6px;
+								box-shadow: 1px 0px 0px 3px $black;
+								transform: skew(-30deg);
+							}
 						}
 
 							.card__name {
+								position: relative;
+								z-index: 1;
+								padding: modular-scale(-9);
+								background-color: $red;
 								color: $white;
 								font-family: 'Roboto Condensed', sans-serif;
 								font-size: 1rem;
