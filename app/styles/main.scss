@@ -148,16 +148,16 @@ img {
 
 					.flipper__inner {
 						display: flex;
-						align-items: center;
 						justify-content: center;
 						width: 100%;
 						height: 100%;
-						padding: inherit;
 						border-radius: inherit;
 						border: 3px solid;
 					}
 
 					.card__flipper--front .flipper__inner {
+						align-items: center;
+						padding: inherit;
 						border-color: $dark-green;
 					}
 
@@ -171,19 +171,24 @@ img {
 				}
 
 					.card__flipper--back .flipper__inner {
+						display: flex;
+						flex-wrap: wrap;
+						padding: modular-scale(-1);
 						border-color: $black;
 					}
 
 						.card__character-img {
+							align-self: center;
 							width: auto;
 							height: modular-scale(8);
 						}
 
 						.card__name-wrap {
 							position: relative;
+							flex: 1;
 							align-self: flex-end;
 							padding: modular-scale(-9);
-							border: 2px solid $black;
+							border: inherit;
 							background-color: $red;
 							text-align: center;
 
